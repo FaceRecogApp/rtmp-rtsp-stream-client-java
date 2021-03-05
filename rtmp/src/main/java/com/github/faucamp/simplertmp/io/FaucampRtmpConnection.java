@@ -1,7 +1,7 @@
 package com.github.faucamp.simplertmp.io;
 
 import android.util.Log;
-import com.github.faucamp.simplertmp.RtmpPublisher;
+import com.github.faucamp.simplertmp.FaucampRtmpPublisher;
 import com.github.faucamp.simplertmp.Util;
 import com.github.faucamp.simplertmp.amf.AmfMap;
 import com.github.faucamp.simplertmp.amf.AmfNull;
@@ -38,7 +38,7 @@ import net.ossrs.rtmp.CreateSSLSocket;
  *
  * @author francois, leoma, pedro
  */
-public class RtmpConnection implements RtmpPublisher {
+public class FaucampRtmpConnection implements FaucampRtmpPublisher {
 
   private static final String TAG = "RtmpConnection";
   private static final Pattern rtmpUrlPattern =
@@ -77,7 +77,7 @@ public class RtmpConnection implements RtmpPublisher {
   private final BitrateManager bitrateManager;
   private boolean isEnableLogs = true;
 
-  public RtmpConnection(ConnectCheckerRtmp connectCheckerRtmp) {
+  public FaucampRtmpConnection(ConnectCheckerRtmp connectCheckerRtmp) {
     this.connectCheckerRtmp = connectCheckerRtmp;
     bitrateManager = new BitrateManager(connectCheckerRtmp);
   }

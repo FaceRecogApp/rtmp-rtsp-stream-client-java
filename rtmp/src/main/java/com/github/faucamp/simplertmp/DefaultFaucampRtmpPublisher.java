@@ -1,6 +1,6 @@
 package com.github.faucamp.simplertmp;
 
-import com.github.faucamp.simplertmp.io.RtmpConnection;
+import com.github.faucamp.simplertmp.io.FaucampRtmpConnection;
 import net.ossrs.rtmp.ConnectCheckerRtmp;
 
 /**
@@ -8,12 +8,12 @@ import net.ossrs.rtmp.ConnectCheckerRtmp;
  *
  * @author francois, leoma, pedro
  */
-public class DefaultRtmpPublisher implements RtmpPublisher {
+public class DefaultFaucampRtmpPublisher implements FaucampRtmpPublisher {
 
-  private RtmpConnection rtmpConnection;
+  private FaucampRtmpConnection rtmpConnection;
 
-  public DefaultRtmpPublisher(ConnectCheckerRtmp connectCheckerRtmp) {
-    rtmpConnection = new RtmpConnection(connectCheckerRtmp);
+  public DefaultFaucampRtmpPublisher(ConnectCheckerRtmp connectCheckerRtmp) {
+    rtmpConnection = new FaucampRtmpConnection(connectCheckerRtmp);
   }
 
   @Override

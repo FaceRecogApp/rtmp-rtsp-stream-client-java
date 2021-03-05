@@ -5,8 +5,8 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Process;
 import android.util.Log;
-import com.github.faucamp.simplertmp.DefaultRtmpPublisher;
-import com.github.faucamp.simplertmp.RtmpPublisher;
+import com.github.faucamp.simplertmp.DefaultFaucampRtmpPublisher;
+import com.github.faucamp.simplertmp.FaucampRtmpPublisher;
 
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -50,14 +50,14 @@ import java.util.concurrent.TimeUnit;
  * muxer.release();
  */
 
-public class SrsFlvMuxer {
+public class FaucampSrsFlvMuxer {
 
   private static final String TAG = "SrsFlvMuxer";
 
   private static final int VIDEO_ALLOC_SIZE = 128 * 1024;
   private static final int AUDIO_ALLOC_SIZE = 4 * 1024;
   private volatile boolean connected = false;
-  private RtmpPublisher publisher;
+  private FaucampRtmpPublisher publisher;
   private Thread worker;
   private SrsFlv flv = new SrsFlv();
   private boolean needToFindKeyFrame = true;
@@ -87,14 +87,14 @@ public class SrsFlvMuxer {
   /**
    * constructor.
    */
-  public SrsFlvMuxer(ConnectCheckerRtmp connectCheckerRtmp, RtmpPublisher publisher) {
+  public FaucampSrsFlvMuxer(ConnectCheckerRtmp connectCheckerRtmp, FaucampRtmpPublisher publisher) {
     this.connectCheckerRtmp = connectCheckerRtmp;
     this.publisher = publisher;
     handler = new Handler(Looper.getMainLooper());
   }
 
-  public SrsFlvMuxer(ConnectCheckerRtmp connectCheckerRtmp) {
-    this(connectCheckerRtmp, new DefaultRtmpPublisher(connectCheckerRtmp));
+  public FaucampSrsFlvMuxer(ConnectCheckerRtmp connectCheckerRtmp) {
+    this(connectCheckerRtmp, new DefaultFaucampRtmpPublisher(connectCheckerRtmp));
   }
 
   public void setProfileIop(byte profileIop) {

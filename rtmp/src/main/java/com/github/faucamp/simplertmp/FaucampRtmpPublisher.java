@@ -8,7 +8,7 @@ package com.github.faucamp.simplertmp;
  *
  * @author francois, leo
  */
-public interface RtmpPublisher {
+public interface FaucampRtmpPublisher {
   /**
    * Issues an RTMP "connect" command and wait for the response.
    *
