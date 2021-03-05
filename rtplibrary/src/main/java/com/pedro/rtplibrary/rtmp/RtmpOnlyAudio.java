@@ -4,7 +4,7 @@ import android.media.MediaCodec;
 import com.pedro.rtplibrary.base.OnlyAudioBase;
 import java.nio.ByteBuffer;
 import net.ossrs.rtmp.ConnectCheckerRtmp;
-import net.ossrs.rtmp.SrsFlvMuxer;
+import net.ossrs.rtmp.FaucampSrsFlvMuxer;
 
 /**
  * More documentation see:
@@ -14,11 +14,11 @@ import net.ossrs.rtmp.SrsFlvMuxer;
  */
 public class RtmpOnlyAudio extends OnlyAudioBase {
 
-  private SrsFlvMuxer srsFlvMuxer;
+  private FaucampSrsFlvMuxer srsFlvMuxer;
 
   public RtmpOnlyAudio(ConnectCheckerRtmp connectChecker) {
     super();
-    srsFlvMuxer = new SrsFlvMuxer(connectChecker);
+    srsFlvMuxer = new FaucampSrsFlvMuxer(connectChecker);
   }
 
   @Override

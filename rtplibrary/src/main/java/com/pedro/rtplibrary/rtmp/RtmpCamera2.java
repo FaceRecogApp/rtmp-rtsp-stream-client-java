@@ -12,7 +12,7 @@ import com.pedro.rtplibrary.base.Camera2Base;
 import com.pedro.rtplibrary.view.LightOpenGlView;
 import com.pedro.rtplibrary.view.OpenGlView;
 import net.ossrs.rtmp.ConnectCheckerRtmp;
-import net.ossrs.rtmp.SrsFlvMuxer;
+import net.ossrs.rtmp.FaucampSrsFlvMuxer;
 
 import java.nio.ByteBuffer;
 
@@ -25,7 +25,7 @@ import java.nio.ByteBuffer;
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class RtmpCamera2 extends Camera2Base {
 
-  private SrsFlvMuxer srsFlvMuxer;
+  private FaucampSrsFlvMuxer srsFlvMuxer;
 
   /**
    * @deprecated This view produce rotations problems and could be unsupported in future versions.
@@ -35,7 +35,7 @@ public class RtmpCamera2 extends Camera2Base {
   @Deprecated
   public RtmpCamera2(SurfaceView surfaceView, ConnectCheckerRtmp connectChecker) {
     super(surfaceView);
-    srsFlvMuxer = new SrsFlvMuxer(connectChecker);
+    srsFlvMuxer = new FaucampSrsFlvMuxer(connectChecker);
   }
 
   /**
@@ -46,22 +46,22 @@ public class RtmpCamera2 extends Camera2Base {
   @Deprecated
   public RtmpCamera2(TextureView textureView, ConnectCheckerRtmp connectChecker) {
     super(textureView);
-    srsFlvMuxer = new SrsFlvMuxer(connectChecker);
+    srsFlvMuxer = new FaucampSrsFlvMuxer(connectChecker);
   }
 
   public RtmpCamera2(OpenGlView openGlView, ConnectCheckerRtmp connectChecker) {
     super(openGlView);
-    srsFlvMuxer = new SrsFlvMuxer(connectChecker);
+    srsFlvMuxer = new FaucampSrsFlvMuxer(connectChecker);
   }
 
   public RtmpCamera2(LightOpenGlView lightOpenGlView, ConnectCheckerRtmp connectChecker) {
     super(lightOpenGlView);
-    srsFlvMuxer = new SrsFlvMuxer(connectChecker);
+    srsFlvMuxer = new FaucampSrsFlvMuxer(connectChecker);
   }
 
   public RtmpCamera2(Context context, boolean useOpengl, ConnectCheckerRtmp connectChecker) {
     super(context, useOpengl);
-    srsFlvMuxer = new SrsFlvMuxer(connectChecker);
+    srsFlvMuxer = new FaucampSrsFlvMuxer(connectChecker);
   }
 
   /**

@@ -8,7 +8,7 @@ import androidx.annotation.RequiresApi;
 import com.pedro.rtplibrary.base.DisplayBase;
 
 import net.ossrs.rtmp.ConnectCheckerRtmp;
-import net.ossrs.rtmp.SrsFlvMuxer;
+import net.ossrs.rtmp.FaucampSrsFlvMuxer;
 
 import java.nio.ByteBuffer;
 
@@ -21,11 +21,11 @@ import java.nio.ByteBuffer;
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class RtmpDisplay extends DisplayBase {
 
-  private SrsFlvMuxer srsFlvMuxer;
+  private FaucampSrsFlvMuxer srsFlvMuxer;
 
   public RtmpDisplay(Context context, boolean useOpengl, ConnectCheckerRtmp connectChecker) {
     super(context, useOpengl);
-    srsFlvMuxer = new SrsFlvMuxer(connectChecker);
+    srsFlvMuxer = new FaucampSrsFlvMuxer(connectChecker);
   }
 
   /**
